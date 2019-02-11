@@ -22,7 +22,21 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Mark Hollowsfield")
+
+@app.route('/profile')
+def profile():
+    userdata={
+        'name':"Mark Hollowsfield",
+        'username':"Marko007",
+        'location':"Kingston, Jamaica ",
+        'dateJoined':"June 2014",
+        'bio': "Aspiring artist with an energizer bunny personality.",
+        'posts':"39",
+        'followers':"400000",
+        'following':"713",
+    }
+    return render_template('profile.html', userdata= userdata);
 
 
 ###

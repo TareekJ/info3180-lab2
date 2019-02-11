@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+<body>
+    {% block main %}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/profile.css') }}">
+    <div class="pic">
+        <img src="{{ url_for('static', filename='singer.jpg') }}">
+    </div>
+        <div class="tcontainer">
+            <span id="name">{{ userdata["name"]}}</span>
+        </div>
+        <div class="tcontainer">
+            <span id="username">{{ userdata["username"]}}</span>
+        </div>
+        <div class="tcontainer">
+            <span id="location">{{ userdata["location"]}}</span>
+        </div>
+        <div class="tcontainer">
+            <span id="dateJoined">{{ userdata["dateJoined"]}}</span>
+        </div>
+        <div id="profileC">
+            <div class='container'>
+                <span id="bio">{{ userdata['bio']}}</span>
+            </div>
+            <div class='container'>
+                <div class='row'>
+                    <div class='column'>
+                        <span id="posts">{{ userdata['posts']}}</span>
+                        <label class='lcard' for="posts">Posts</label>
+                    </div>
+                    <div class='column'>
+                        <span id="following">{{ userdata['following']}}</span>
+                        <label class='lcard' for="following">Following</label>
+                    </div>
+                    <div class='column'>
+                        <span id="followers">{{ userdata['followers']}}</span>
+                        <label class='lcard' for="followers">Followers</label>
+                    </div>
+                </div>
+                
+            </div>
+            <button type="button">Follow</button>
+        </div>
+    </div>
+    </body>
+    {% endblock %}
+</html>
